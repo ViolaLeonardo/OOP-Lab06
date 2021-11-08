@@ -83,18 +83,18 @@ public class Robot {
      *            the new Y position to move the robot to
      * @return true if robot gets moved, false otherwise
      */
-    private boolean moveToPosition(final int newX, final int newY) throws PositionOutOfBoundException{
+    private boolean moveToPosition(final int newX, final int newY) /*throws PositionOutOfBoundException*/{
         
         boolean returnValue = true;
         if (this.isBatteryEnoughToMove()) {
-            if (this.environment.move(newX, newY)) {
-                this.consumeBatteryForMovement();
-                this.log("Moved to position(" + newX + "," + newY + ").");
-            } else {
+        	this.environment.move(newX, newY);
+            this.consumeBatteryForMovement();
+            this.log("Moved to position(" + newX + "," + newY + ").");
+            /*} else {
                 this.log("Can not move to (" + newX + "," + newY
                         + ") the robot is touching at least one world boundary");
                 returnValue = false;
-            }
+            }*/
         } else {
             this.log("Can not move to position(" + newX + "," + newY + "). Not enough battery.");
             returnValue = false;
