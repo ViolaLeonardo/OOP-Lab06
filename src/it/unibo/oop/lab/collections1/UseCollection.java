@@ -165,6 +165,30 @@ public final class UseCollection {
                 + " from a LinkedList took " + time
                 + "ns (" + time / TO_MS + "ms)");
         
+        
+        /********************************************/
+        time = System.nanoTime();
+    	
+    	for(int y: arrayList) {
+    		
+    	}
+    	
+    	time = System.nanoTime() - time;
+        System.out.println("Reading all the elements"
+                + " from a ArrayList took " + time
+                + "ns (" + time / TO_MS + "ms)");
+    	
+        time = System.nanoTime();
+    	
+    	for(int y: linkedList) {
+    		
+    	}
+    	
+    	time = System.nanoTime() - time;
+        System.out.println("Reading all the elements"
+                + " from a LinkedList took " + time
+                + "ns (" + time / TO_MS + "ms)");
+        
     	/*
     	 * 7)
     	 * */     
